@@ -446,7 +446,7 @@ module.exports = function (grunt) {
     }
 
     function uploadApplication(env) {
-      if ( !options.sourceBundle ) return;
+      if ( !options.sourceBundle ) return env;
       
       var s3Object = {};
 
