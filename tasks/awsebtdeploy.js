@@ -157,9 +157,9 @@ module.exports = function (grunt) {
       if (!options.applicationName) grunt.warn('Missing "applicationName"');
       if (!options.environmentCNAME) grunt.warn('Missing "environmentCNAME"');
       if (!options.region) grunt.warn('Missing "region"');
-      if (!options.sourceBundle) grunt.warn('Missing "sourceBundle"');
+      if (!options.sourceBundle && !options.preUploaded ) grunt.warn('Missing "sourceBundle"');
 
-      if (!grunt.file.isFile(options.sourceBundle))
+      if (!options.preUploaded && !grunt.file.isFile(options.sourceBundle))
         grunt.warn('"sourceBundle" points to a non-existent file');
 
       if (!options.healthPage) {
@@ -446,6 +446,8 @@ module.exports = function (grunt) {
     }
 
     function uploadApplication(env) {
+      if ( !options.sourceBundle ) return;
+      
       var s3Object = {};
 
       for (var key in options.s3) {
