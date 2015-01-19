@@ -22,7 +22,7 @@ module.exports = function (grunt) {
     if (!data || !data.Environments) return false;
 
     return data.Environments.filter(function (e) {        
-      return e.CNAME ===cname ||   e.EnvironmentName === envName;
+      return ( cname && e.CNAME === cname ) || ( envName && e.EnvironmentName === envName );
     })[0];
   }
 
