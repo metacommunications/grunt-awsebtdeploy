@@ -63,8 +63,6 @@ module.exports = function (grunt) {
     if (!options.accessKeyId) options.accessKeyId = process.env.AWS_ACCESS_KEY_ID;
     if (!options.secretAccessKey) options.secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
 
-    if (!options.accessKeyId) grunt.warn('Missing "accessKeyId"');
-    if (!options.secretAccessKey) grunt.warn('Missing "secretAccessKey"');
 
     return {
       accessKeyId: options.accessKeyId,
