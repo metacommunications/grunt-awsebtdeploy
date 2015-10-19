@@ -291,7 +291,6 @@ module.exports = function (grunt) {
               return qAWS.describeEnvironments({
                 ApplicationName: options.applicationName,
                 EnvironmentNames: [env.EnvironmentName],
-                VersionLabel: options.versionLabel,
                 IncludeDeleted: false
               });
             })
@@ -303,6 +302,12 @@ module.exports = function (grunt) {
               }
 
               var currentEnv = data.Environments[0];
+
+              if (currentEnv.VersionLabel !== options.versionLabel){
+                grunt.log.writeln('Environment ' + currentEnv.EnvironmentName +
+                    ' status: ' + currentEnv.Status + '...');
+                return checkDeploymentComplete();
+              }
 
               if (currentEnv.Status !== 'Ready') {
                 grunt.log.writeln('Environment ' + currentEnv.EnvironmentName +

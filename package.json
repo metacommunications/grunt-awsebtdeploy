@@ -1,23 +1,30 @@
 {
   "name": "grunt-awsebtdeploy",
   "description": "A grunt plugin to deploy applications to AWS Elastic Beanstalk",
-  "version": "0.1.11",
-  "homepage": "https://github.com/metacommunications/grunt-awsebtdeploy",
+  "version": "0.1.12",
+  "homepage": "https://github.com/swaven/grunt-awsebtdeploy",
   "author": {
     "name": "Simone Busoli",
     "email": "simone.busoli@gmail.com"
   },
+  "contributors": [
+    {
+        "name": "Swaven",
+        "email": "antoine@swaven.com",
+        "url": "http://www.swaven.com"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/metacommunications/grunt-awsebtdeploy.git"
+    "url": "https://github.com/swaven/grunt-awsebtdeploy.git"
   },
   "bugs": {
-    "url": "https://github.com/metacommunications/grunt-awsebtdeploy/issues"
+    "url": "https://github.com/swaven/grunt-awsebtdeploy/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/metacommunications/grunt-awsebtdeploy/blob/master/LICENSE-MIT"
+      "url": "https://github.com/swaven/grunt-awsebtdeploy/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
